@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1a365d;
+  --secondary: #2d3748;
+  --accent: #3182ce;
+  --background: #f7fafc;
+}
+
+body {
+  @apply bg-white text-gray-900;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(
+      circle at 0% 0%,
+      rgba(49, 130, 206, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(66, 153, 225, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(49, 130, 206, 0.1) 0%,
+      transparent 50%
+    ),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233182ce' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Enhanced background with animated gradient */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle at 0% 0%,
+      rgba(49, 130, 206, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(66, 153, 225, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(49, 130, 206, 0.1) 0%,
+      transparent 50%
+    );
+  z-index: -1;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section {
+  @apply py-16 sm:py-24;
+}
+
+.heading {
+  @apply font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-primary;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subheading {
+  @apply font-heading font-semibold text-xl sm:text-2xl text-secondary;
+}
+
+.btn {
+  @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-accent hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-all duration-200 transform hover:scale-105;
+}
+
+.card {
+  @apply bg-white/90 rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 backdrop-blur-sm;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.skill-icon {
+  @apply w-16 h-16 text-accent mb-3 transition-transform duration-300 transform hover:scale-110;
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-filter backdrop-blur-lg transition-all duration-300;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-card:hover {
+  @apply shadow-xl;
+  transform: translateY(-5px);
+}
+
+/* Fix for text blur on hover */
+.skill-item {
+  @apply transition-all duration-300;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Enhanced animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Project slider styles */
+.project-slider {
+  @apply w-full;
+}
+
+.project-slider .slick-slide {
+  @apply px-0;
+}
+
+.project-slider .slick-dots {
+  @apply bottom-4;
+}
+
+.project-slider .slick-dots li button:before {
+  @apply text-white opacity-75;
+}
+
+.project-slider .slick-dots li.slick-active button:before {
+  @apply text-accent opacity-100;
+}
