@@ -119,7 +119,7 @@ const Contact = () => {
                     <br />
                     Opp. G.T. Bapuji Stop,
                     <br />
-                    Dhule-424002
+                    Dhule-424002, Maharashtra
                   </p>
                 </motion.div>
               </div>
