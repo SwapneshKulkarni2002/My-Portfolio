@@ -17,7 +17,7 @@ const Footer = () => {
               <br />
               Opp. G.T. Bapuji Stop,
               <br />
-              Dhule-424002
+              Dhule-424002, Maharashtra
             </p>
           </div>
           <div>
